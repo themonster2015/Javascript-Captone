@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import './style.css';
 import fetchPoke from './fetchPoke';
 import loadPoke from './loadPoke';
