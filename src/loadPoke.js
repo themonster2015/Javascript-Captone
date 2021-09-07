@@ -27,7 +27,7 @@ const loadPoke = (data, likes) => {
     likeBtn.classList.add('btn');
     likeBtn.innerHTML += "<i class='fa fa-heart' aria-hidden='true'></i>";
     likeBtn.addEventListener('click', async () => {
-      const res = postLike(poke.name).then(() => {
+      postLike(poke.name).then(() => {
         window.location.reload();
       });
     });
