@@ -1,3 +1,5 @@
+import { postLike } from './fetchInteractions';
+
 const list = document.getElementsByClassName('list');
 
 const loadPoke = (data, likes) => {
@@ -24,6 +26,11 @@ const loadPoke = (data, likes) => {
     const likeBtn = document.createElement('btn');
     likeBtn.classList.add('btn');
     likeBtn.innerHTML += "<i class='fa fa-heart' aria-hidden='true'></i>";
+    likeBtn.addEventListener('click', async () => {
+      const res = postLike(poke.name).then(() => {
+        window.location.reload();
+      });
+    });
 
     likeDiv.appendChild(likeBtn);
     const likeCounter = document.createElement('span');
