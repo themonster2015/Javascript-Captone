@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #222;
+}
+
+.navbar-brand {
+  width: 120px;
+  height: 50px;
+}
+
+footer {
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+}
+
+footer > p {
+  margin-left: 30px;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  padding-bottom: 30px;
+}
+
+.list {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokeWrapper {
+  flex-basis: 33.333333%;
+  text-align: center;
+}
+
+.pokeImg {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.description {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 50%;
+}
+
+.cmtBtn {
+  border: 1px solid black;
+}
