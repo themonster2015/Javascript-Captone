@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
-
 .nav-link {
   text-decoration: none;
   color: #222;
@@ -34,6 +30,7 @@ footer > p {
 body {
   margin: 0;
 }
+
 .container {
   padding-bottom: 30px;
 }
@@ -55,6 +52,7 @@ body {
   max-width: 50%;
   margin: 0 auto;
 }
+
 .description {
   margin: auto;
   display: flex;
