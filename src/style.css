@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .nav-link {
@@ -62,5 +63,6 @@ body {
 }
 
 .cmtBtn {
-  border: 1px solid black;
+  box-shadow: 5px 5px;
+  border-radius: 0 !important;
 }
