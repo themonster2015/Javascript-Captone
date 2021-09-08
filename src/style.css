@@ -78,6 +78,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
+  height: auto;
   margin-top: 60px;
   background-color: white;
   padding: 2rem 6rem;
@@ -98,12 +99,16 @@ body {
 }
 
 .pokemon__img {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
 }
 
 .pokemon__img__container {
   border: 1px solid #333;
   background: #ffd60a;
   border-radius: 5px;
+}
+
+#comments {
+  font-size: 12px;
 }
