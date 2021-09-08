@@ -24,7 +24,6 @@ export const postLike = async (id) => {
 
   })
     .then((res) => {
-      console.log(res.status);
       return res.status;
     });
 };

@@ -1,4 +1,4 @@
-import { postLike } from './fetchInteractions';
+import { postLike } from './fetchInteractions.js';
 
 const list = document.getElementsByClassName('list');
 
