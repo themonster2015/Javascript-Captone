@@ -1,4 +1,5 @@
 import { fetchPokeStats } from './fetchPoke.js';
+import { fetchComments } from './fetchInteractions.js';
 
 const commentModalDiv = document.querySelector('.comments-modal');
 
