@@ -1,5 +1,7 @@
 import { postLike } from './fetchInteractions';
 import countPokemons from './countPokemons';
+import loadPokeDetail from './loadPokeDetail.js';
+
 
 const list = document.getElementsByClassName('list');
 const el = document.getElementById('pokeCounter');
@@ -18,7 +20,8 @@ const loadPoke = (data, likes) => {
     description.classList.add('description');
     const name = document.createElement('span');
     name.classList.add('card-title');
-    name.innerHTML = poke.name.slice(0, 1).toUpperCase() + poke.name.slice(1);
+    const pokeName = poke.name.slice(0, 1).toUpperCase() + poke.name.slice(1);
+    name.innerHTML = pokeName;
     const likeDiv = document.createElement('div');
     likeDiv.classList.add('d-flex', 'flex-column');
     let likeCount;
@@ -42,18 +45,20 @@ const loadPoke = (data, likes) => {
     likeCounter.innerHTML = `${likeCount} likes`;
     wrapper.classList.add('pokeWrapper');
     likeDiv.appendChild(likeCounter);
-    img.setAttribute('src', `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`);
+    const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`;
+    img.setAttribute('src', imgUrl);
     img.setAttribute('alt', 'Pokemon');
     img.classList.add('pokeImg', 'card-img-top');
-    const btn = document.createElement('btn');
-    btn.classList.add('cmtBtn', 'btn', 'btn-outline-dark', 'btn-lg');
-    btn.innerText = 'Comments';
+    const commentBtn = document.createElement('btn');
+    commentBtn.classList.add('cmtBtn', 'btn', 'btn-outline-dark', 'btn-lg');
+    commentBtn.innerText = 'Comments';
+    commentBtn.addEventListener('click', loadPokeDetail.bind(this, imgUrl, pokeName, index));
 
     wrapper.appendChild(img);
     description.appendChild(name);
     description.appendChild(likeDiv);
     cardBody.appendChild(description);
-    cardBody.appendChild(btn);
+    cardBody.appendChild(commentBtn);
     wrapper.appendChild(cardBody);
     list[0].appendChild(wrapper);
   });
