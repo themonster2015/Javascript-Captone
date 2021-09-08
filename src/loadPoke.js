@@ -1,9 +1,14 @@
-import { postLike } from './fetchInteractions.js';
+import { postLike } from './fetchInteractions';
+import countPokemons from './countPokemons';
 import loadPokeDetail from './loadPokeDetail.js';
 
 const list = document.getElementsByClassName('list');
+const el = document.getElementById('pokeCounter');
 
 const loadPoke = (data, likes) => {
+  const countPoke = countPokemons(data);
+  el.innerHTML = `Pokemons(${countPoke})`;
+
   data.forEach((poke, index) => {
     const wrapper = document.createElement('div');
     wrapper.classList.add('card');
