@@ -3,6 +3,8 @@ import { fetchComments } from './fetchInteractions.js';
 
 const commentModalDiv = document.querySelector('.comments-modal');
 
+const countComments = (comments) => (comments.length > 0 ? comments.length : 0);
+
 const loadPokeDetail = async (imgUrl, pokeName, index) => {
   index += 1;
   const stats = await fetchPokeStats(index);
