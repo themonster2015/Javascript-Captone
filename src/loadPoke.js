@@ -1,4 +1,5 @@
 import { postLike } from './fetchInteractions.js';
+import loadPokeDetail from './loadPokeDetail.js';
 
 const list = document.getElementsByClassName('list');
 
