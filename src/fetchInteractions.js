@@ -35,3 +35,25 @@ export const fetchComments = async (index) => {
   const res = await fetch(`${baseUrl}${appId}/comments?item_id=item${index}`);
   return res.json();
 };
+
+export const postComment = async (id, username, comment) => {
+  const commentData = {
+    item_id: `item${id}`,
+    username,
+    comment,
+  };
+
+  const response = await fetch(`${baseUrl}${appId}/comments`, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(commentData),
+  });
+  return response.json();
+};
