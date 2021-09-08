@@ -65,7 +65,16 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
     commentModalDiv.innerHTML = '';
   };
 
+  const addComment = async (idx) => {
+    const nameInput = document.querySelector('.name-input').value;
+    const commentInput = document.querySelector('.comment-input').value;
+    postComment(idx, nameInput, commentInput);
+  };
+
   btnCloseModal.addEventListener('click', closeModal.bind(null));
+
+  const fSubmit = document.querySelector('.add');
+  fSubmit.addEventListener('click', addComment.bind(null, index));
 };
 
 export default loadPokeDetail;
