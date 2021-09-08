@@ -2,6 +2,7 @@ import { fetchPokeStats } from './fetchPoke.js';
 import { fetchComments, postComment } from './fetchInteractions.js';
 
 const commentModalDiv = document.querySelector('.comments-modal');
+const overlay = document.querySelector('.overlay');
 
 const countComments = (comments) => (comments.length > 0 ? comments.length : 0);
 
@@ -20,12 +21,12 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
     <div class="pokemon__data">
       <h3 class="pokemon__name text-center mt-3 text-primary">${pokeName}</h3>
       <div class="d-flex justify-content-between">
-        <p class="pokemon__row"><span class="badge bg-primary">Height:</span>${stats.height}</p>
-        <p class="pokemon__row"><span class="badge bg-primary">Moves:</span>${stats.moves}</p>
+        <p><span class="badge">Height:</span><span class="mx-3">${stats.height}</span></p>
+        <p><span class="badge">Moves:</span><span class="mx-3">${stats.moves}</span></p>
       </div>
       <div class="d-flex justify-content-between">
-        <p class="pokemon__row"><span class="badge bg-primary mr-5">Weight:</span>${stats.weight}</p>
-        <p class="pokemon__row"><span class="badge bg-primary">Order:</span>${stats.order}</p>
+        <p><span class="badge mr-5">Weight:</span><span class="mx-3">${stats.weight}</span></p>
+        <p><span class="badge">Order:</span><span class="mx-3">${stats.order}</span></p>
       </div>
     </div>
     <div class="comment-form my-2">
@@ -45,6 +46,7 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
   `;
   commentModalDiv.insertAdjacentHTML('beforeend', html);
   commentModalDiv.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 
   const commentsDiv = document.getElementById('comments');
 
@@ -62,6 +64,7 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
   const btnCloseModal = document.querySelector('.close-modal');
   const closeModal = () => {
     commentModalDiv.classList.add('hidden');
+    overlay.classList.add('hidden');
     commentModalDiv.innerHTML = '';
   };
 

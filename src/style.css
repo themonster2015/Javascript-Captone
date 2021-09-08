@@ -5,6 +5,9 @@
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
+.navbar {
+  height: 100px;
+}
 .nav-link {
   text-decoration: none;
   color: #222;
@@ -19,7 +22,6 @@ footer {
   bottom: 0;
   height: 100px;
   width: 100%;
-  border-top: 2px solid black;
   display: flex;
   align-items: center;
 }
@@ -30,7 +32,6 @@ footer > p {
 
 body {
   margin: 0;
-  min-height: 100vh;
 }
 
 .container {
@@ -53,6 +54,9 @@ body {
 .pokeImg {
   max-width: 50%;
   margin: 0 auto;
+  background: #1e6091;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .description {
@@ -63,9 +67,14 @@ body {
   max-width: 50%;
 }
 
-.cmtBtn {
-  box-shadow: 5px 5px;
-  border-radius: 0 !important;
+.cmtBtn,
+.badge {
+  box-shadow: 2px 2px 2px #14746f;
+  background: #ff9f1c;
+}
+
+.cmtBtn:hover {
+  background: #fcbf49;
 }
 
 .hidden {
@@ -105,10 +114,25 @@ body {
 
 .pokemon__img__container {
   border: 1px solid #333;
-  background: #ffd60a;
+  background: #1e6091;
   border-radius: 5px;
 }
 
 #comments {
   font-size: 12px;
+}
+
+.fa-heart {
+  color: #ef233c;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1500px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }

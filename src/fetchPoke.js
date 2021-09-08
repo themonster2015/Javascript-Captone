@@ -1,7 +1,7 @@
 const pokeUrl = 'https://pokeapi.co/api/v2/pokemon';
 
 const fetchPoke = async () => {
-  const data = await fetch(`${pokeUrl}?limit=6`)
+  const data = await fetch(`${pokeUrl}?limit=9`)
     .then((res) => res.json())
     .then((res) => res.results);
   return data;
