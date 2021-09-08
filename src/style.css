@@ -19,7 +19,6 @@ footer {
   bottom: 0;
   height: 100px;
   width: 100%;
-  border: 2px solid black;
   display: flex;
   align-items: center;
 }
@@ -30,6 +29,7 @@ footer > p {
 
 body {
   margin: 0;
+  min-height: 100vh;
 }
 
 .container {
@@ -65,4 +65,44 @@ body {
 .cmtBtn {
   box-shadow: 5px 5px;
   border-radius: 0 !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.comments-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  margin-top: 60px;
+  background-color: white;
+  padding: 2rem 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.pokemon__img {
+  width: 50%;
+  height: 50%;
+}
+
+.pokemon__img__container {
+  border: 1px solid #333;
+  background: #ffd60a;
+  border-radius: 5px;
 }

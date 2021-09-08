@@ -23,8 +23,5 @@ export const postLike = async (id) => {
     body: JSON.stringify(data), // body data type must match "Content-Type" header);
 
   })
-    .then((res) => {
-      console.log(res.status);
-      return res.status;
-    });
+    .then((res) => res.status);
 };
