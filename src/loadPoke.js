@@ -2,7 +2,6 @@ import { postLike } from './fetchInteractions';
 import countPokemons from './countPokemons';
 import loadPokeDetail from './loadPokeDetail.js';
 
-
 const list = document.getElementsByClassName('list');
 const el = document.getElementById('pokeCounter');
 
