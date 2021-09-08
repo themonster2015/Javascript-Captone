@@ -26,7 +26,14 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
   `;
   commentModalDiv.insertAdjacentHTML('beforeend', html);
   commentModalDiv.classList.remove('hidden');
-  overlay.classList.remove('hidden');
+
+  const btnCloseModal = document.querySelector('.close-modal');
+  const closeModal = () => {
+    commentModalDiv.classList.add('hidden');
+    commentModalDiv.innerHTML = '';
+  };
+
+  btnCloseModal.addEventListener('click', closeModal.bind(null));
 };
 
 export default loadPokeDetail;

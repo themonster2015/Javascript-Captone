@@ -19,7 +19,6 @@ footer {
   bottom: 0;
   height: 100px;
   width: 100%;
-  border: 2px solid black;
   display: flex;
   align-items: center;
 }
@@ -30,6 +29,7 @@ footer > p {
 
 body {
   margin: 0;
+  min-height: 100vh;
 }
 
 .container {
@@ -106,3 +106,4 @@ body {
   background: #ffd60a;
   border-radius: 5px;
 }
+
