@@ -19,7 +19,7 @@ footer {
   bottom: 0;
   height: 100px;
   width: 100%;
-  border: 2px solid black;
+  border-top: 2px solid black;
   display: flex;
   align-items: center;
 }
