@@ -1,13 +1,13 @@
 import { fetchPokeStats } from './fetchPoke.js';
 import { fetchComments, postComment } from './fetchInteractions.js';
+import countComments from './commentCount.js';
 
 const commentModalDiv = document.querySelector('.comments-modal');
 const overlay = document.querySelector('.overlay');
 
-const countComments = (comments) => (comments.length > 0 ? comments.length : 0);
-
 const loadPokeDetail = async (imgUrl, pokeName, index) => {
   index += 1;
+
   const stats = await fetchPokeStats(index);
   const comments = await fetchComments(index);
   const commentsCount = countComments(comments);
@@ -30,21 +30,22 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
       </div>
     </div>
     <div class="comment-form my-2">
-        <h5 class="text-center text-primary">Comments(${commentsCount})</h5>
-        <div id="comments"></div>
-        <h5 class="text-center text-primary mt-2">Add a comment</h5>
-        <div class="mb-3">
-          <input type="text" class="form-control name-input" placeholder="Your name">
-        </div>
-        <div class="mb-3">
-          <textarea class="form-control comment-input" rows="3" placeholder="Your insights"></textarea>
-        </div>
-        <button type="submit" class="add btn btn-primary">Comment</button>
+      <h5 class="text-center text-primary">Comments(${commentsCount})</h5>
+      <div id="comments"></div>
+      <h5 class="text-center text-primary mt-2">Add a comment</h5>
+      <div class="mb-3">
+        <input type="text" class="form-control name-input" placeholder="Your name">
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control comment-input" rows="3" placeholder="Your insights"></textarea>
+      </div>
+      <button type="submit" class="add btn btn-primary">Comment</button>
     </div>
   </article>
-
   `;
+
   commentModalDiv.insertAdjacentHTML('beforeend', html);
+
   commentModalDiv.classList.remove('hidden');
   overlay.classList.remove('hidden');
 
@@ -61,7 +62,6 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
     });
   }
 
-  const btnCloseModal = document.querySelector('.close-modal');
   const closeModal = () => {
     commentModalDiv.classList.add('hidden');
     overlay.classList.add('hidden');
@@ -74,10 +74,11 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
     postComment(idx, nameInput, commentInput);
   };
 
+  const btnCloseModal = document.querySelector('.close-modal');
   btnCloseModal.addEventListener('click', closeModal.bind(null));
 
-  const fSubmit = document.querySelector('.add');
-  fSubmit.addEventListener('click', addComment.bind(null, index));
+  const formSubmitBtn = document.querySelector('.add');
+  formSubmitBtn.addEventListener('click', addComment.bind(null, index));
 };
 
 export default loadPokeDetail;

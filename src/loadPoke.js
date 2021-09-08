@@ -49,7 +49,7 @@ const loadPoke = (data, likes) => {
     img.setAttribute('alt', 'Pokemon');
     img.classList.add('pokeImg', 'card-img-top', 'p-4');
     const commentBtn = document.createElement('btn');
-    commentBtn.classList.add('cmtBtn', 'btn', 'btn-lg', 'my-3');
+    commentBtn.classList.add('comment-btn', 'btn', 'mb-3', 'mt-2');
     commentBtn.innerText = 'Comments';
     commentBtn.addEventListener('click', loadPokeDetail.bind(this, imgUrl, pokeName, index));
 
