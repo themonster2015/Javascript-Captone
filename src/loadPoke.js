@@ -1,6 +1,6 @@
-import { postLike } from './fetchInteractions';
-import countPokemons from './countPokemons';
-import loadPokeDetail from './loadPokeDetail.js';
+import { postLike } from './fetchInteractions.js';
+import countPokemons from './countPokemons.js';
+import loadCommentModal from './loadPokeDetail.js';
 
 const list = document.getElementsByClassName('list');
 const el = document.getElementById('pokeCounter');
@@ -51,7 +51,7 @@ const loadPoke = (data, likes) => {
     const commentBtn = document.createElement('btn');
     commentBtn.classList.add('comment-btn', 'btn', 'mb-3', 'mt-2');
     commentBtn.innerText = 'Comments';
-    commentBtn.addEventListener('click', loadPokeDetail.bind(this, imgUrl, pokeName, index));
+    commentBtn.addEventListener('click', loadCommentModal.bind(this, imgUrl, pokeName, index));
 
     wrapper.appendChild(img);
     description.appendChild(name);

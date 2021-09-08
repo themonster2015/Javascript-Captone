@@ -1,34 +1,26 @@
 const baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const appId = 'FgxwWwDd7byG5fwpAa6v';
 
-export const fetchLikes = async () => {
-  const data = await fetch(`${baseUrl}${appId}/likes/`)
-    .then((res) => res.json())
-    .then((res) => res);
-  return data;
-};
+export const fetchLikes = async () => fetch(`${baseUrl}${appId}/likes/`)
+  .then((res) => res.json())
+  .then((res) => res);
 
 export const postLike = async (id) => {
   const data = {
     item_id: id,
   };
   await fetch(`${baseUrl}${appId}/likes/`, {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, *same-origin, omit
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json',
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
-    redirect: 'follow', // manual, *follow, error
-    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: JSON.stringify(data), // body data type must match "Content-Type" header);
-
-  }).then((res) => {
-    console.log(res.status);
-    return res.status;
-  });
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data),
+  }).then((res) => res.status);
 };
 
 export const fetchComments = async (index) => {
@@ -36,14 +28,15 @@ export const fetchComments = async (index) => {
   return res.json();
 };
 
-export const postComment = async (id, username, comment) => {
+export const postComment = async (comment) => {
+  const { id, name, commentText } = comment;
   const commentData = {
     item_id: `item${id}`,
-    username,
-    comment,
+    username: name,
+    comment: commentText,
   };
 
-  const response = await fetch(`${baseUrl}${appId}/comments`, {
+  await fetch(`${baseUrl}${appId}/comments`, {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
@@ -54,6 +47,5 @@ export const postComment = async (id, username, comment) => {
     redirect: 'follow',
     referrerPolicy: 'no-referrer',
     body: JSON.stringify(commentData),
-  });
-  return response.json();
+  }).then((res) => res.status);
 };

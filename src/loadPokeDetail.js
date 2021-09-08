@@ -5,7 +5,7 @@ import countComments from './commentCount.js';
 const commentModalDiv = document.querySelector('.comments-modal');
 const overlay = document.querySelector('.overlay');
 
-const loadPokeDetail = async (imgUrl, pokeName, index) => {
+const loadCommentModal = async (imgUrl, pokeName, index) => {
   index += 1;
 
   const stats = await fetchPokeStats(index);
@@ -71,7 +71,11 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
   const addComment = async (idx) => {
     const nameInput = document.querySelector('.name-input').value;
     const commentInput = document.querySelector('.comment-input').value;
-    postComment(idx, nameInput, commentInput);
+    const comment = { id: idx, name: nameInput, commentText: commentInput };
+
+    postComment(comment).then(() => {
+      window.location.reload();
+    });
   };
 
   const btnCloseModal = document.querySelector('.close-modal');
@@ -81,4 +85,4 @@ const loadPokeDetail = async (imgUrl, pokeName, index) => {
   formSubmitBtn.addEventListener('click', addComment.bind(null, index));
 };
 
-export default loadPokeDetail;
+export default loadCommentModal;
