@@ -14,11 +14,15 @@ footer {
   height: 10vh;
   width: 100%;
   display: flex;
+  justify-content: start;
   align-items: center;
+  background: #3d5a80;
+  color: #fff;
+  padding: 10px 0px 0px 15px;
 }
 
 footer > p {
-  margin-left: 30px;
+  /* margin-left: 30px; */
 }
 
 .navbar {

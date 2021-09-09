@@ -19,7 +19,7 @@ const loadCommentModal = async (imgUrl, pokeName, index) => {
       <img class="pokemon__img" src="${imgUrl}" />
     </div>
     <div class="pokemon__data">
-      <h3 class="pokemon__name text-center mt-3 text-primary">${pokeName}</h3>
+      <h3 class="pokemon__name text-center mt-3 text-success">${pokeName}</h3>
       <div class="d-flex justify-content-between">
         <p><span class="badge">Height:</span><span class="mx-3">${stats.height}</span></p>
         <p><span class="badge">Moves:</span><span class="mx-3">${stats.moves}</span></p>
