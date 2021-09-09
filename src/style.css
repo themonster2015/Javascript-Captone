@@ -5,21 +5,14 @@
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #222;
-}
-
-.navbar-brand {
-  width: 120px;
-  height: 50px;
+body {
+  margin: 0;
 }
 
 footer {
   bottom: 0;
-  height: 100px;
+  height: 10vh;
   width: 100%;
-  border-top: 2px solid black;
   display: flex;
   align-items: center;
 }
@@ -28,13 +21,18 @@ footer > p {
   margin-left: 30px;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
+.navbar {
+  height: 100px;
 }
 
-.container {
-  padding-bottom: 30px;
+.nav-link {
+  text-decoration: none;
+  color: #4592c4;
+}
+
+.navbar-brand {
+  width: 120px;
+  height: 50px;
 }
 
 .list {
@@ -50,9 +48,13 @@ body {
   text-align: center;
 }
 
-.pokeImg {
-  max-width: 50%;
+.pokeImg,
+.pokemon__img__container {
+  max-width: 70%;
   margin: 0 auto;
+  background: #dee2e6;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0 0 0 1px inset;
 }
 
 .description {
@@ -63,9 +65,18 @@ body {
   max-width: 50%;
 }
 
-.cmtBtn {
-  box-shadow: 5px 5px;
-  border-radius: 0 !important;
+.comment-btn,
+.badge,
+.add {
+  box-shadow: 2px 2px 2px #14746f;
+  background: #30a7d7;
+  color: #fff;
+}
+
+.comment-btn:hover,
+.add:hover {
+  background: #4592c4;
+  color: #f9c74f;
 }
 
 .hidden {
@@ -78,6 +89,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
+  height: auto;
   margin-top: 60px;
   background-color: white;
   padding: 2rem 6rem;
@@ -90,7 +102,7 @@ body {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
-  font-size: 5rem;
+  font-size: 3rem;
   color: #333;
   cursor: pointer;
   border: none;
@@ -98,12 +110,25 @@ body {
 }
 
 .pokemon__img {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
 }
 
-.pokemon__img__container {
-  border: 1px solid #333;
-  background: #ffd60a;
-  border-radius: 5px;
+#comments {
+  font-size: 12px;
+}
+
+.fa-heart {
+  color: #ef233c;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1400px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }
