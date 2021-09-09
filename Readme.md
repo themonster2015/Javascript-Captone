@@ -4,8 +4,7 @@
 
 > This is a web application based on an the Poke API which contains data about the pokemon world. It displays a home page showing a list of items that you can "like." and a popup window with more data about an item that you can use to comment on it or reserve it for a period of time.
 
-
-![screenshot](./screenshot.png)
+![Screen Shot 2021-09-09 at 10 25 02](https://user-images.githubusercontent.com/10905837/132655413-fc864d18-cb6d-4eb5-b123-71297591e83c.png)
 
 In this project, we have;
 
