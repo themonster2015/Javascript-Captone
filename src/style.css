@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+body {
+  margin: 0;
+}
+
+footer {
+  bottom: 0;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background: #3d5a80;
+  color: #fff;
+  padding: 10px 0 0 15px;
+}
+
+.navbar {
+  height: 100px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #4592c4;
+}
+
+.navbar-brand {
+  width: 120px;
+  height: 50px;
+}
+
+.list {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokeWrapper {
+  flex-basis: 33.333333%;
+  text-align: center;
+}
+
+.pokeImg,
+.pokemon__img__container {
+  max-width: 70%;
+  margin: 0 auto;
+  background: #dee2e6;
+  border-radius: 5px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0 0 0 1px inset;
+}
+
+.description {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 50%;
+}
+
+.comment-btn,
+.badge,
+.add {
+  box-shadow: 2px 2px 2px #14746f;
+  background: #30a7d7;
+  color: #fff;
+}
+
+.comment-btn:hover,
+.add:hover {
+  background: #4592c4;
+  color: #f9c74f;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.comments-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: auto;
+  margin-top: 60px;
+  background-color: white;
+  padding: 2rem 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.pokemon__img {
+  width: 40%;
+  height: 40%;
+}
+
+#comments {
+  font-size: 12px;
+}
+
+.fa-heart {
+  color: #ef233c;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1400px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.card:hover {
+  transform: scale(0.95);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
