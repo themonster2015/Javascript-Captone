@@ -37,7 +37,7 @@ In this project, we have;
 
 ## Live Demo
 
-[Pokemon](https://livedemo.com)
+[Pokemon](https://themonster2015.github.io/Javascript-Captone/)
 
 ## Getting Started
 
@@ -55,9 +55,9 @@ In this project, we have;
 - Install jest using the command <code>$ npm install --save-dev jest</code>
 - You can check for more information here <a href="https://jestjs.io/">jest version</a>
 - Add this to package.json :
-  - "scripts": {
-     - "test": "jest"
-  - }
+  ` "scripts": {`
+     ` "test": "jest"`
+  ` }`
 - run <code>npm test</code>
 
 ### Prerequisites
